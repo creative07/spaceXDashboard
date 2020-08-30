@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import { allLaunchesActions } from "../../_actions/all-launches.action";
 import ImageGrid from "../Loader/loader";
-import './styles.css';
+import "./styles.css";
 import {
   Button,
   Card,
@@ -19,11 +19,10 @@ import {
   Form,
   FormGroup,
   Label,
-  Input
+  Input,
 } from "reactstrap";
 import { upcomingLaunchesActions } from "../../_actions/upcoming_launches.action";
 import { pastLaunchesActions } from "../../_actions/past_launches.action";
-
 
 class Dashboard extends React.PureComponent {
   constructor(props) {
@@ -37,7 +36,7 @@ class Dashboard extends React.PureComponent {
       isOpen: false,
       startdate: "",
       enddate: "",
-      showLoader: false
+      showLoader: false,
     };
     this.handlePrevClick = this.handlePrevClick.bind(this);
     this.handleNextClick = this.handleNextClick.bind(this);
@@ -115,14 +114,14 @@ class Dashboard extends React.PureComponent {
 
   handlePastLaunches() {
     this.setState({
-      showLoader : true
+      showLoader: true,
     });
     this.props.past_launches_action();
     this.setState({
       currentPage: 1,
     });
     this.setState({
-      showLoader : false
+      showLoader: false,
     });
   }
 
@@ -143,7 +142,7 @@ class Dashboard extends React.PureComponent {
     });
   }
 
-  handleUnsuccess(){
+  handleUnsuccess() {
     var newdata = sessionStorage.getItem("data");
     var data = JSON.parse(newdata);
     const result3 = data.filter((data) => data.launch_success == false);
@@ -182,18 +181,20 @@ class Dashboard extends React.PureComponent {
       backgroundColor: "#770000",
       padding: "5%",
       fontFamily: "Arial",
-      background: 'url(public/image/dashboard.jpg)no-repeat',
-      backgroundAttachment : "fixed"
-      
+      background: "url(public/image/dashboard.jpg)no-repeat",
+      backgroundAttachment: "fixed",
     };
     const mybutton = {
-      padding : "2%"
-    }
+      padding: "2%",
+    };
 
-    const main ={
-      paddingLeft : "30%"
-    }
-    sessionStorage.setItem("data", JSON.stringify(this.props.all_launches_Details));
+    const main = {
+      paddingLeft: "30%",
+    };
+    sessionStorage.setItem(
+      "data",
+      JSON.stringify(this.props.all_launches_Details)
+    );
     const { handleNextClick, handlePrevClick } = this;
     const { currentPage, pageSize } = this.state;
     var data = this.state.launchdata;
@@ -216,7 +217,6 @@ class Dashboard extends React.PureComponent {
     if (data) {
       return (
         <div style={mystyle}>
-          <Button href="/homepage">Go to Homepage</Button>
           <Navbar color="dark" light expand="md">
             <NavbarBrand href="/dashboard">
               <h1>Dashbaord</h1>
@@ -273,7 +273,7 @@ class Dashboard extends React.PureComponent {
               Successfull Launches
             </Button>
             <Button onClick={() => this.handleUnsuccess()}>
-            Unsuccessfull Launches
+              Unsuccessfull Launches
             </Button>
             <br></br>
           </Navbar>
@@ -305,12 +305,13 @@ class Dashboard extends React.PureComponent {
               </button>
             </div>
           ) : (
-          <div><ImageGrid/></div>
+            <div>
+              <ImageGrid />
+            </div>
           )}
 
           {data && data.length > 0 ? (
             <div>
-              
               {data.slice(startIndex, endIndex).map((item, index) => (
                 <div key={index} style={main}>
                   <br></br>
@@ -396,7 +397,9 @@ class Dashboard extends React.PureComponent {
               ))}
             </div>
           ) : (
-            <div><ImageGrid/></div>
+            <div>
+              <ImageGrid />
+            </div>
           )}
 
           {data && data.length > 0 ? (
@@ -426,7 +429,9 @@ class Dashboard extends React.PureComponent {
               </button>
             </div>
           ) : (
-            <div><ImageGrid/></div>
+            <div>
+              <ImageGrid />
+            </div>
           )}
         </div>
       );
