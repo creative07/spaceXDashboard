@@ -217,9 +217,9 @@ class Dashboard extends React.PureComponent {
     if (data) {
       return (
         <div style={mystyle}>
-          <Button href="/homepage">Go to Homepage</Button>
+          {/* <Button href="/homepage">Go to Homepage</Button> */}
           <Navbar color="dark" light expand="md">
-          <NavbarBrand href="/dashboard">
+          <NavbarBrand>
               <h1>Dashbaord</h1>
             </NavbarBrand>
             <Button onClick={() => this.handleAllLaunches()}>
