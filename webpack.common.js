@@ -6,8 +6,8 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx"],
     alias: {
-      images: path.resolve(__dirname, "./src/public/images"),
-      styles: path.resolve(__dirname, "./src/public/css"),
+      images: path.resolve(__dirname, "./public/images"),
+      styles: path.resolve(__dirname, "./public/css"),
     },
   },
   performance: {

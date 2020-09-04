@@ -1,8 +1,4 @@
 import config from 'config';
-// import { authHeader } from '../_helpers';
-// import { Link, useHistory } from "react-router-dom";
-
-// const history = useHistory();
 
 export const allLaunchesService = {
     all_launches

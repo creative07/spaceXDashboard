@@ -6,7 +6,7 @@ import { history } from '../_helpers';
 import { alertActions } from '../_actions';
 import { PrivateRoute } from '../_components';
 import {Dashboard} from '../_components/Dashoboard/dashboard';
-// import homepage from '../_components/Homepage/homepage';
+import homepage from '../_components/Homepage/homepage';
 
 class App extends React.Component {
     constructor(props) {
@@ -26,8 +26,8 @@ class App extends React.Component {
                        
                         <Router history={history}>
                             <Switch>
-                                {/* <Route path="/dashboard" component={Dashboard} /> */}
-                                <Route path="/" component={Dashboard} />
+                                <Route path="/dashboard" component={Dashboard} />
+                                <Route path="/" component={homepage} />
                                 <Redirect from="*" to="/" />
                             </Switch>
                         </Router>

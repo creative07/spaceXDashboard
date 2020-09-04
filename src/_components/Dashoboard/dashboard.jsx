@@ -181,7 +181,7 @@ class Dashboard extends React.PureComponent {
       backgroundColor: "#770000",
       padding: "5%",
       fontFamily: "Arial",
-      background: "url(public/image/dashboard.jpg)no-repeat",
+      background: 'url(public/image/dashboard.jpg)no-repeat center',
       backgroundAttachment: "fixed",
     };
     const mybutton = {
@@ -217,8 +217,9 @@ class Dashboard extends React.PureComponent {
     if (data) {
       return (
         <div style={mystyle}>
+          <Button href="/homepage">Go to Homepage</Button>
           <Navbar color="dark" light expand="md">
-            <NavbarBrand href="/dashboard">
+          <NavbarBrand href="/dashboard">
               <h1>Dashbaord</h1>
             </NavbarBrand>
             <Button onClick={() => this.handleAllLaunches()}>
